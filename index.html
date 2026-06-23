@@ -2,143 +2,113 @@
 <html lang="id">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Travelinds</title>
 
-    <title>Travel Bersama Fernando</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        body {
+            background-image: url("head.jpg");
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
+        .login-box {
+            width: 350px;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            color: #1f4e79;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: #1f4e79;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2c5d9e;
+        }
+    </style>
 </head>
 
 <body>
 
-    <header class="hero-header">
+    <div class="login-box">
 
-        <div class="header-overlay">
+        <h1>Travelinds</h1>
 
-            <h1>Travelinds</h1>
+        <p>Silakan login untuk masuk</p>
 
-            <nav>
-                <ul>
-                    <li><a href="beranda.html">Beranda</a></li>
-                    <li><a href="bantuan.html">Bantuan</a></li>
-                    <li><a href="tentangkami.html">Tentang Kami</a></li>
-                </ul>
-            </nav>
+        <input type="text" id="username" placeholder="Username">
 
-        </div>
+        <input type="password" id="password" placeholder="Password">
 
-    </header>
+        <button onclick="login()">Masuk</button>
 
-    <main>
+    </div>
 
-        <section>
+    <script>
 
-            <h2 class="section-title">
-                Travel Yuk!
-            </h2>
+        function login() {
 
-            <div class="container">
+            let username =
+                document.getElementById("username").value;
 
-                <div class="card">
+            let password =
+                document.getElementById("password").value;
 
-                    <img src="danautoba.jpg">
+            if (username.trim() !== "" &&
+                password.trim() !== "") {
 
-                    <h3>Danau Toba</h3>
+                localStorage.setItem("login", "true");
 
-                    <p>
-                        Danau terbesar di Asia Tenggara dengan sejarah yang menarik dan pemandangan alam yang indah.
-                    </p>
+                window.location.href = "utama.html";
 
-                    <div class="package-row">
+            } else {
 
-                        <span class="duration">
-                            2 Hari 1 Malam
-                        </span>
+                alert("Username dan Password harus diisi!");
 
-                        <span class="price">
-                            Rp 1.250.000
-                        </span>
+            }
+        }
 
-                    </div>
-
-                </div>
-
-                <div class="card">
-
-                    <img src="candi.jpg">
-
-                    <h3>Candi Borobudur</h3>
-
-                    <p>
-                        Candi Buddha terbesar di dunia yang menjadi salah satu destinasi wisata sejarah terkenal.
-                    </p>
-
-                    <div class="package-row">
-
-                        <span class="duration">
-                            1 Hari
-                        </span>
-
-                        <span class="price">
-                            Rp 850.000
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <div class="card">
-
-                    <img src="komodo.jpg">
-
-                    <h3>Pulau Komodo</h3>
-
-                    <p>
-                        Pulau habitat asli komodo dengan panorama laut yang luar biasa.
-                    </p>
-
-                    <div class="package-row">
-
-                        <span class="duration">
-                            3 Hari 2 Malam
-                        </span>
-
-                        <span class="price">
-                            Rp 2.750.000
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <section>
-
-            <h2 class="section-title">
-                Tahukah kamu?
-            </h2>
-
-            <p>
-                Indonesia memiliki banyak destinasi wisata alam, budaya, serta sejarah yang menarik dan beragam.
-            </p>
-
-        </section>
-
-    </main>
-
-    <footer>
-
-        <p>
-            © 2026 Explore Indonesia Travel
-        </p>
-
-    </footer>
+    </script>
 
 </body>
 

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Travel Bersama Fernando</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header class="hero-header">
+
+        <div class="header-overlay">
+
+            <h1>Travelinds</h1>
+
+            <nav>
+                <ul>
+                    <li><a href="beranda.html">Beranda</a></li>
+                    <li><a href="bantuan.html">Bantuan</a></li>
+                    <li><a href="tentangkami.html">Tentang Kami</a></li>
+                    <li><a href="#" onclick="logout()">Logout</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <section>
+
+            <h2 class="section-title">
+                Travel Yuk!
+            </h2>
+
+            <div class="container">
+
+                <div class="card">
+
+                    <img src="danautoba.jpg">
+
+                    <h3>Danau Toba</h3>
+
+                    <p>
+                        Danau terbesar di Asia Tenggara dengan sejarah yang menarik dan pemandangan alam yang indah.
+                    </p>
+
+                    <div class="package-row">
+
+                        <span class="duration">
+                            2 Hari 1 Malam
+                        </span>
+
+                        <span class="price">
+                            Rp 1.250.000
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <img src="candi.jpg">
+
+                    <h3>Candi Borobudur</h3>
+
+                    <p>
+                        Candi Buddha terbesar di dunia yang menjadi salah satu destinasi wisata sejarah terkenal.
+                    </p>
+
+                    <div class="package-row">
+
+                        <span class="duration">
+                            1 Hari
+                        </span>
+
+                        <span class="price">
+                            Rp 850.000
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <img src="komodo.jpg">
+
+                    <h3>Pulau Komodo</h3>
+
+                    <p>
+                        Pulau habitat asli komodo dengan panorama laut yang luar biasa.
+                    </p>
+
+                    <div class="package-row">
+
+                        <span class="duration">
+                            3 Hari 2 Malam
+                        </span>
+
+                        <span class="price">
+                            Rp 2.750.000
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <h2 class="section-title">
+                Tahukah kamu?
+            </h2>
+
+            <p>
+                Indonesia memiliki banyak destinasi wisata alam, budaya, serta sejarah yang menarik dan beragam.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>
+            © 2026 Explore Indonesia Travel
+        </p>
+
+    </footer>
+    <script>
+        function logout() {
+            localStorage.removeItem("login");
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+<script>
+    if (localStorage.getItem("login") !== "true") {
+        window.location.href = "index.html";
+    }
+</script>
+
+</html>
