@@ -10,6 +10,63 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <style>
+        #popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 999;
+        }
+
+        #popup-diskon {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            width: 350px;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        #popup-diskon h2 {
+            color: #1f4e79;
+            margin-bottom: 15px;
+        }
+
+        #popup-diskon p {
+            margin-bottom: 20px;
+        }
+
+        #btn-promo {
+            background: #1f4e79;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #btn-promo:hover {
+            opacity: 0.9;
+        }
+
+        #close-popup {
+            float: right;
+            font-size: 25px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -140,7 +197,53 @@
         </p>
 
     </footer>
+    <div id="popup-overlay"></div>
+
+    <div id="popup-diskon">
+
+        <span id="close-popup">&times;</span>
+
+        <h2>🎉 Promo Spesial!</h2>
+
+        <p>
+            Dapatkan diskon <strong>20%</strong> untuk seluruh paket wisata hari ini.
+        </p>
+
+        <button id="btn-promo">
+            Klaim Diskon
+        </button>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
     <script>
+        $(document).ready(function () {
+
+            $("#popup-overlay").hide();
+            $("#popup-diskon").hide();
+
+            setTimeout(function () {
+                $("#popup-overlay").fadeIn(500);
+                $("#popup-diskon").fadeIn(500);
+            }, 2000);
+
+            $("#close-popup, #popup-overlay").on("click", function () {
+                $("#popup-overlay").fadeOut(500);
+                $("#popup-diskon").fadeOut(500);
+            });
+
+            $("#btn-promo").on("click", function () {
+                alert("Selamat! Diskon 20% berhasil diklaim.");
+            });
+
+        });
+    </script>
+
+
+    <script>
+
         function logout() {
             localStorage.removeItem("login");
             window.location.href = "index.html";
@@ -148,6 +251,7 @@
     </script>
 
 </body>
+
 <script>
     if (localStorage.getItem("login") !== "true") {
         window.location.href = "index.html";
